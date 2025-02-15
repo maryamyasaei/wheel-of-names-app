@@ -1,50 +1,41 @@
-# React + TypeScript + Vite
+# Wheels Of Names App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Build Your Own Wheel of Names
+This will be an app that I presume is inspired by the TV show Wheel of Fortune. In the TV show, contestants try to figure out a short phrase by guessing letters. If they guess correctly, the letter will be revealed. They spin the wheel to determine how much money each correct letter is worth. Wheel of Names is similar, but allows us to create a virtual wheel, putting our own names on it. We can then virtually spin it to determine a winner.
 
-Currently, two official plugins are available:
+# Tech Stack:
+Bun / Vite
+React / Typescript
+SASS / styled-components
+canvas / canvas-confetti
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Application features:
+I. Question
+This is where users can submit a question or phrase that will determine the focus of the spins.
+Any changes made in the input field are saved when the user clicks outside of it (on focus out).
+II. Wheel
+The wheel component spins with an easing animation and determines the winner.
+The spin direction can be adjusted using the buttons, for either clockwise or counterclockwise rotation.
+Each adjacent sector is uniquely colored, and their sizes are calculated proportionally to the number of participants.
+III. Add Participants
+The participant entry area includes an input field for entering a participant's name and an 'ADD' button to add it to the participants list.
+To add participants more quickly, the user can press the ENTER key on the keyboard.
+IV. Participants List
+This section displays all the participants' names.
+The list offers options to sort the names alphabetically or shuffle them randomly, with both actions dynamically updating the wheel component.
 
-## Expanding the ESLint configuration
+# Running the app locally
+To run the app, follow these steps.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Ensure that NodeJS is installed.
+Install bun.
+From the project folder, execute the following commands:
+  To install dependencies:
+     bun install
+  To run the app:
+     bun run dev
+     
+# Deploy on Vercel
+The easiest way to deploy your Next.js app is to use the Vercel Platform from the creators of Next.js.
+This App Deplpoyed to Vercel, You can have access via this link: https://todo-app-black-mu.vercel.app/
+     
