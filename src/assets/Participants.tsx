@@ -1,14 +1,14 @@
-import styled from 'styled-components';
-import { Section, Button, Input } from './styles';
-import { FC, useState } from 'react';
+import styled from "styled-components"
+import { Section, Button, Input } from "../styles"
+import { FC, useState } from "react"
 
-import { MAX_PARTICIPANTS } from './App';
-import { capitalize } from './utils';
+import { MAX_PARTICIPANTS } from "../App"
+import { capitalize } from "../utils"
 
 const ListItemContainer = styled.div`
   display: flex;
   justify-content: space-between;
-`;
+`
 
 const ListItem = styled.li`
   width: 100%;
@@ -20,7 +20,7 @@ const ListItem = styled.li`
   color: #282c34;
   font-weight: bold;
   font-size: 1rem;
-`;
+`
 
 const ButtonGroup = styled.div`
   display: flex;
@@ -29,18 +29,18 @@ const ButtonGroup = styled.div`
   & > button {
     margin-left: 10px;
   }
-`;
+`
 
 const ErrorMessage = styled.p`
   color: red;
-`;
+`
 
 interface ParticipantsProps {
-  handleAddName: (name: string) => void;
-  handleRemoveName: (index: number) => void;
-  shuffleNames: () => void;
-  sortNames: () => void;
-  names: string[];
+  handleAddName: (name: string) => void
+  handleRemoveName: (index: number) => void
+  shuffleNames: () => void
+  sortNames: () => void
+  names: string[]
 }
 
 export const Participants: FC<ParticipantsProps> = ({
@@ -50,33 +50,33 @@ export const Participants: FC<ParticipantsProps> = ({
   sortNames,
   names,
 }) => {
-  const [participant, setParticipant] = useState('');
-  const [error, setError] = useState('');
+  const [participant, setParticipant] = useState("")
+  const [error, setError] = useState("")
 
-  const isMaxParticipantsReached = names.length >= MAX_PARTICIPANTS;
-  const hasParticipants = names.length > 0;
+  const isMaxParticipantsReached = names.length >= MAX_PARTICIPANTS
+  const hasParticipants = names.length > 0
 
   const validateInput = (name: string) => {
-    const specialCharPattern = /[^a-zA-Z0-9 ]/;
+    const specialCharPattern = /[^a-zA-Z0-9 ]/
     if (!name.trim()) {
-      return 'Name cannot be empty.';
+      return "Name cannot be empty."
     }
     if (specialCharPattern.test(name)) {
-      return 'Name cannot contain special characters.';
+      return "Name cannot contain special characters."
     }
-    return '';
-  };
+    return ""
+  }
 
   const handleAddParticipant = () => {
-    const validationError = validateInput(participant);
+    const validationError = validateInput(participant)
     if (validationError) {
-      setError(validationError);
+      setError(validationError)
     } else {
-      handleAddName(participant);
-      setParticipant('');
-      setError('');
+      handleAddName(participant)
+      setParticipant("")
+      setError("")
     }
-  };
+  }
 
   return (
     <Section>
@@ -88,8 +88,8 @@ export const Participants: FC<ParticipantsProps> = ({
         value={participant}
         onChange={(e) => setParticipant(e.target.value)}
         onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
-          if (e.key === 'Enter') {
-            handleAddParticipant();
+          if (e.key === "Enter") {
+            handleAddParticipant()
           }
         }}
       />
@@ -122,5 +122,5 @@ export const Participants: FC<ParticipantsProps> = ({
         ))}
       </ul>
     </Section>
-  );
-};
+  )
+}
