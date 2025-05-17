@@ -36,5 +36,5 @@ From the project folder, execute the following commands:
      bun run dev
      
 # Deploy on Vercel
-The easiest way to deploy your Next.js app is to use the Vercel Platform from the creators of Next.js.
+This App Deplpoyed to Vercel, You can have access via this link: https://wheels-of-names-app.vercel.app/
 
