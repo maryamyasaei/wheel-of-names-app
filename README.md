@@ -1,4 +1,4 @@
-# Wheels Of Names App
+# Wheel Of Names App
 
 # Build Your Own Wheel of Names
 This will be an app that I presume is inspired by the TV show Wheel of Fortune. In the TV show, contestants try to figure out a short phrase by guessing letters. If they guess correctly, the letter will be revealed. They spin the wheel to determine how much money each correct letter is worth. Wheel of Names is similar, but allows us to create a virtual wheel, putting our own names on it. We can then virtually spin it to determine a winner.
