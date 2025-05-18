@@ -36,5 +36,5 @@ From the project folder, execute the following commands:
      bun run dev
      
 # Deploy on Vercel
-This App Deplpoyed to Vercel, You can have access via this link: https://wheels-of-names-app.vercel.app/
+This App Deplpoyed to Vercel, You can have access via this link: https://wheel-of-names-app.vercel.app/
 
